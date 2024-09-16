@@ -1,0 +1,17 @@
+<div class="main">
+    <input
+  #newItem
+  placeholder="add an item"
+  (keyup.enter)="addItem(newItem.value); newItem.value = ''"
+  class="lg-text-input"
+  id="addItemInput" />
+
+<button class="btn-primary" (click)="addItem(newItem.value)">Add</button>
+  
+  <ul>
+    <li *ngFor="let item of items">
+      <input type="checkbox" id="{{item.description}}" name="{{item.description}}" />
+      <label for="{{item.description}}">  {{item.description}}</label> <br>
+    </li>   
+  </ul>
+</div>
