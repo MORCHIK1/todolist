@@ -1,0 +1,21 @@
+ul{
+    list-style-type:none;
+}
+.delete-btn {
+    background: none;
+    border: none;
+    color: red;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 0;
+    margin-left: 10px;
+    line-height: 1;
+  }
+  
+  .delete-btn:hover {
+    color: darkred;
+  }
+  
+  label {
+    margin-right: 20px;
+  }
