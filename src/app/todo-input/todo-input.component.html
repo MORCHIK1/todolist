@@ -10,13 +10,17 @@
   <button class="btn-primary" (click)="addItem(newItem.value)">Add</button>
 
   <ul>
-    <li *ngFor="let item of items">
-      <input type="checkbox" id="{{ item.description }}" name="{{ item.description }}" />
+    <li *ngFor="let item of allItems">
+      <input
+        type="checkbox"
+        id="{{ item.description }}"
+        name="{{ item.description }}"
+        [(ngModel)] = "item.done"
+      />
       <label for="{{ item.description }}" style="margin-right: 20px;">
         {{ item.description }}
       </label>
 
-      <!-- Red cross delete button -->
       <button
         class="delete-btn"
         (click)="deleteItem(item)"
@@ -26,4 +30,6 @@
       </button>
     </li>
   </ul>
+  <p>All - {{ showAllItems() }}</p>
+  <p>Completed - {{ showCompletedItems() }}</p>
 </div>

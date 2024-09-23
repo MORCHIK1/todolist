@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {FormsModule} from '@angular/forms';
+import { FormsModule} from '@angular/forms';
 import { CommonModule } from "@angular/common";
 
 @Component({
@@ -42,5 +42,10 @@ export class TodoInputComponent {
   deleteItem(item: { description: string}) {
     this.allItems = this.allItems.filter((i) => i !== item);
   }
+  showAllItems(){
+    return this.allItems.length
+  }
+
+  showCompletedItems = ()=>(this.allItems.filter((item) => item.done)).length
 }
 
